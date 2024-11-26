@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-u_zl7b#j3r9=)7m*p!*xsb@a5cnz$lo3%iry4&3-m5_j60l#ir
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: list[str] = []
 
 
 # Application definition
@@ -53,12 +53,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'blogicum.urls'
 
-TEMPLATES_DIR = BASE_DIR / 'html'
+TEMPLATES_DIR = BASE_DIR / 'templates'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
+        'DIRS': [TEMPLATES_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
