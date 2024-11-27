@@ -1,19 +1,6 @@
 from django.shortcuts import render
 
 
-# Create your views here.
-def index(request):
-    return render(request, 'blog/index.html', {})
-
-
-def post_detail(request):
-    return render(request, 'detail.html', {})
-
-
-def category_posts(request):
-    return render(request, 'category.html', {})
-
-
 posts = [
     {
         'id': 0,
@@ -56,3 +43,22 @@ posts = [
                 укутывал их, чтобы не испортились от дождя.''',
     },
 ]
+
+
+# Create your views here.
+def index(request):
+    context = {
+        'posts': posts
+    }
+    return render(request, 'blog/index.html', context)
+
+
+def post_detail(request):
+    return render(request, 'detail.html', {})
+
+
+def category_posts(request):
+    return render(request, 'category.html', {})
+
+
+
