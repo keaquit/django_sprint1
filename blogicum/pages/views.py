@@ -3,8 +3,14 @@ from django.shortcuts import render
 
 # Create your views here.
 def about(request):
-    return render(request, 'about.html', {})
+    context = {
+        'about': about
+    }
+    return render(request, 'pages/about.html', context)
 
 
 def rules(request):
-    return render(request, 'rules.html', {})
+    context = {
+        'rules': rules
+    }    
+    return render(request, 'pages/rules.html', context)
