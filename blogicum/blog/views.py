@@ -68,6 +68,6 @@ post_category = {post['category']: post for post in posts}
 
 def category_posts(request, category_slug):
     context = {
-        'post': post_category[category_slug]
+        'category': category_slug
     }
     return render(request, 'blog/category.html', context)
