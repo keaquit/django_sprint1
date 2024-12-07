@@ -12,5 +12,5 @@ def about(request):
 def rules(request):
     context = {
         'rules': rules
-    }    
+    }
     return render(request, 'pages/rules.html', context)
