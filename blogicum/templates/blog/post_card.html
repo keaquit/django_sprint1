@@ -10,7 +10,7 @@
       Категория: <a href="{% url 'blog:category_posts' post.category %}">{{ post.category }}</a>
     </li>
   </ul> 
-  {% if route == 'posts/<int:post_id>/' %}
+  {% if flag == True %}
     <p>
       {{ post.text }}
     </p>

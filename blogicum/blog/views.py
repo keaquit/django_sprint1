@@ -46,9 +46,10 @@ posts = [
 ]
 
 
-def index(request):
+def index(request, flag):
     context = {
-        'posts': reversed(posts)
+        'posts': reversed(posts),
+        'flag': flag
     }
     return render(request, 'blog/index.html', context)
 
@@ -56,16 +57,20 @@ def index(request):
 POSTS_ID = {post['id']: post for post in posts}
 
 
-def post_detail(request, post_id):
+def post_detail(request, post_id, flag):
     try:
         post = POSTS_ID[post_id]
+        context = {
+            'post': post,
+            'flag': flag,
+        }
     except KeyError:
         raise Http404("Page not found")
-    return render(request, 'blog/detail.html', {"post": post})
+    return render(request, 'blog/detail.html', context)
 
 
 def category_posts(request, category_slug):
     context = {
-        'category': category_slug
+        'category': category_slug,
     }
     return render(request, 'blog/category.html', context)
