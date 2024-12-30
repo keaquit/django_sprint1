@@ -10,7 +10,7 @@
       Категория: <a href="{% url 'blog:category_posts' post.category %}">{{ post.category }}</a>
     </li>
   </ul> 
-  {% if flag == True %}
+  {% if view_name == 'post_detail' %}
     <p>
       {{ post.text }}
     </p>
